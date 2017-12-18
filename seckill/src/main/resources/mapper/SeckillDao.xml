@@ -13,13 +13,13 @@
     </update>
 
     <select id="queryById" resultType="Seckill" parameterType="long">
-        SELECT seckill_id , NAME ,start_time,end_time,create_time
+        SELECT seckill_id , NAME ,NUMBER ,start_time,end_time,create_time
         FROM seckill
         WHERE seckill_id = #{seckillId}
     </select>
     
     <select id="queryAll" resultType="Seckill">
-        SELECT seckill_id , NAME ,start_time,end_time,create_time
+        SELECT seckill_id , NAME ,NUMBER,start_time,end_time,create_time
         FROM seckill
         ORDER BY create_time DESC
         limit #{offset},#{limit}

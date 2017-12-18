@@ -20,10 +20,14 @@
         <fileset id="fileset" name="Spring Dao" removed="false">
           <file>file://$MODULE_DIR$/src/main/resources/spring/spring-dao.xml</file>
         </fileset>
+        <fileset id="fileset2" name="Spring Service" removed="false">
+          <file>file://$MODULE_DIR$/src/main/resources/spring/spring-service.xml</file>
+          <file>file://$MODULE_DIR$/src/main/resources/spring/spring-dao.xml</file>
+        </fileset>
       </configuration>
     </facet>
   </component>
-  <component name="NewModuleRootManager" LANGUAGE_LEVEL="JDK_1_5">
+  <component name="NewModuleRootManager" LANGUAGE_LEVEL="JDK_1_6">
     <output url="file://$MODULE_DIR$/target/classes" />
     <output-test url="file://$MODULE_DIR$/target/test-classes" />
     <content url="file://$MODULE_DIR$">
