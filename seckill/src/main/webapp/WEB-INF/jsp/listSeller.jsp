@@ -10,7 +10,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>秒杀列表页</title>
+    <title>商品列表页</title>
     <%@include file="common/head.jsp"%>
 </head>
 <body>
@@ -28,7 +28,7 @@
                     <th>开始时间</th>
                     <th>结束时间</th>
                     <th>创建时间</th>
-                    <th>详情页</th>
+                    <th>操作</th>
                 </tr>
                 </thead>
                 <tbody>
@@ -45,11 +45,55 @@
                         <td>
                             <fmt:formatDate value="${sk.createTime}" pattern="yyyy-MM-dd HH:mm:ss" />
                         </td>
-                        <td><a class="btn btn-info" href="/seckill/${sk.seckillId}/detail" target="_blank">详情</a></td>
+                        <td>
+                            <a class="btn btn-info" href="/seckill/${sk.seckillId}/modify" target="_blank">修改</a>
+                            <a class="btn btn-info" href="/seckill/${sk.seckillId}/delete" target="_blank">删除</a>
+                        </td>
                     </tr>
                 </c:forEach>
                 </tbody>
             </table>
+        </div>
+        <div class="panel-heading text-center">
+            <h2 ><a class="btn btn-info" href="/seckill/add" target="_blank">添加商品</a> </h2>
+        </div>
+    </div>
+</div>
+
+<div class="container">
+    <div class="row clearfix">
+        <div class="col-md-12 column">
+            <div class="row clearfix">
+                <div class="col-md-4 column">
+                </div>
+                <div class="col-md-4 column">
+                    <ul class="pagination">
+                        <li>
+                            <a href="#">Prev</a>
+                        </li>
+                        <li>
+                            <a href="#">1</a>
+                        </li>
+                        <li>
+                            <a href="#">2</a>
+                        </li>
+                        <li>
+                            <a href="#">3</a>
+                        </li>
+                        <li>
+                            <a href="#">4</a>
+                        </li>
+                        <li>
+                            <a href="#">5</a>
+                        </li>
+                        <li>
+                            <a href="#">Next</a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="col-md-4 column">
+                </div>
+            </div>
         </div>
     </div>
 </div>

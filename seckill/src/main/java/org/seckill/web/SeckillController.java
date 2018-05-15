@@ -15,6 +15,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 
+import javax.servlet.http.HttpServletRequest;
 import java.util.Date;
 import java.util.List;
 
@@ -34,6 +35,30 @@ public class SeckillController {
         return "list";
     }
 
+    @RequestMapping(value = "/listSeller", method = RequestMethod.GET)
+    public String listSeller(Model model) {
+        List<Seckill> list = seckillService.getSeckillList();
+        model.addAttribute("list", list);
+        return "listSeller";
+    }
+
+    @RequestMapping(value = "/{seckillId}/modify" ,method = RequestMethod.GET)
+    public String modify(@RequestBody Seckill seckill){
+        return "modifyGood";
+    }
+
+    @RequestMapping(value = "/{seckillId}/delete" ,method = RequestMethod.GET)
+    public String delete(@PathVariable("seckillId") Long seckillId){
+        seckillService.deleteSeckillGoodById(seckillId.intValue());
+        return "redirect:/seckill/listSeller";
+    }
+
+    @RequestMapping(value = "/add" ,method = RequestMethod.GET)
+    public String add(@RequestBody Seckill seckill ){
+        System.out.println("addGood seckill:"+ seckill.toString());
+        return "addGood";
+    }
+
     @RequestMapping(value = "/{seckillId}/detail", method = RequestMethod.GET)
     public String detail(Model model,
                          @PathVariable("seckillId") Long seckillId) {
@@ -47,7 +72,6 @@ public class SeckillController {
         model.addAttribute("seckill",seckill);
         return "detail";
     }
-
     //ajax  json
     @ResponseBody
     @RequestMapping(value = "/{seckillId}/exposer",
@@ -94,6 +118,7 @@ public class SeckillController {
             return new SeckillResult<SeckillExecution>(true,execution);
         }
     }
+
     @ResponseBody
     @RequestMapping(value = "/time/now",method = RequestMethod.GET)
     public SeckillResult<Long > time(){

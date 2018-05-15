@@ -18,6 +18,8 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 import org.springframework.util.DigestUtils;
 
+import javax.annotation.Resource;
+import javax.annotation.Resources;
 import java.util.Date;
 import java.util.List;
 
@@ -25,12 +27,10 @@ import java.util.List;
 public class SeckillServiceImpl implements SeckillService {
 
     private Logger logger = LoggerFactory.getLogger(this.getClass());
-    @Autowired
+    @Resource
     private SeckillDao seckillDao;
-    @Autowired
+    @Resource
     private SuccessKilledDao successKilledDao;
-    //加入混淆盐值,随机
-    public final String salt = "asdaksjdn2342#$%%#$^wqwe@#!@#$#@%$^%6!@#SAFSG^#$%";
 
     public List<Seckill> getSeckillList() {
         return seckillDao.queryAll(0, 10);
@@ -96,7 +96,23 @@ public class SeckillServiceImpl implements SeckillService {
         }
     }
 
+    @Override
+    public int addSeckillGood(Seckill seckill) {
+        return seckillDao.add(seckill);
+    }
+
+    @Override
+    public int updateSeckillGood(Seckill seckill) {
+        return seckillDao.update(seckill);
+    }
+
+    @Override
+    public void deleteSeckillGoodById(Integer id) {
+        seckillDao.delete(id);
+    }
+
     private String getMD5(long seckillId) {
+        String salt = "asdaksjdn2342#$%%#$^wqwe@#!@#$#@%$^%6!@#SAFSG^#$%";
         String base = seckillId + "/" + salt;
         String md5 = DigestUtils.md5DigestAsHex(base.getBytes());
         return md5;

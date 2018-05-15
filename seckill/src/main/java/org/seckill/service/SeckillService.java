@@ -42,5 +42,9 @@ public interface SeckillService {
     SeckillExecution executeSeckil(long seckillId, long userphone, String md5)
             throws SeckillExecption,RepeatKillExeception,SeckillCloseExeception;
 
+    int addSeckillGood (Seckill seckill);
 
+    int updateSeckillGood (Seckill seckill);
+
+    void deleteSeckillGoodById (Integer id);
 }

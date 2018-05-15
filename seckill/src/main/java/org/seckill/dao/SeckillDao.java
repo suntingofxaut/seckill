@@ -2,6 +2,7 @@ package org.seckill.dao;
 
 import org.apache.ibatis.annotations.Param;
 import org.seckill.entity.Seckill;
+import org.springframework.stereotype.Component;
 
 import java.util.Date;
 import java.util.List;
@@ -30,4 +31,10 @@ public interface SeckillDao {
      * @return
      */
     List<Seckill> queryAll(@Param("offset") int offset, @Param("limit") int limit);
+
+    int add(Seckill seckill);
+
+    int update(Seckill seckill);
+
+    void delete(int id);
 }

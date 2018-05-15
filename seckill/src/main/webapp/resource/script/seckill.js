@@ -30,7 +30,6 @@ var seckill = {
         //详情页初始化
         init: function (params) {
             //手机验证和登录,计时交互
-            //规划我们的交互流程
             //在cookie中查找手机号
             var userPhone = $.cookie('userPhone');
             //验证手机号
@@ -144,6 +143,29 @@ var seckill = {
             //秒杀开始
             seckill.handlerSeckill(seckillId, seckillBox);
         }
+    },
+
+    addGood :function (nane, number, startTime, endTime) {
+        $("#submit").click(function(){
+            $.ajax({
+                type: "post",
+                url: "seckill/add",
+                contentType: "application/json",
+                data: JSON.stringify({
+                    "nane": "100",
+                    "number": "1",
+                    "startTime" :"0",
+                    "endTime" : "0",
+                }),
+                dataType: 'json',
+                success: function (data) {
+                    alert(data);
+                },
+                error: function () {
+                    alert('exception');
+                }
+            });
+        });
     }
 
 }
