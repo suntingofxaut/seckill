@@ -7,37 +7,6 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="4836845f-9361-4038-8ad9-a0527b94c656" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../../seckill/src/main/webapp/resource/picture/1004/i81.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../../seckill/src/main/webapp/resource/picture/1004/i82.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../../seckill/src/main/webapp/resource/picture/1004/i83.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../../seckill/src/main/webapp/resource/picture/index.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../../seckill/src/main/webapp/WEB-INF/jsp/addGood.jsp" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../../seckill/src/main/webapp/WEB-INF/jsp/listSeller.jsp" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../../seckill/src/main/webapp/WEB-INF/jsp/modifyGood.jsp" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../../seckill/src/test/java/org/seckill/service/Impl/SeckillServiceImplTest.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/vcs.xml" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../../seckill/target/classes/org/seckill/web/SeckillController.class" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../seckill/target/classes/org/seckill/dao/SeckillDao.class" afterPath="$PROJECT_DIR$/../../seckill/target/classes/org/seckill/dao/SeckillDao.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../seckill/target/classes/org/seckill/service/Impl/SeckillServiceImpl.class" afterPath="$PROJECT_DIR$/../../seckill/target/classes/org/seckill/service/Impl/SeckillServiceImpl.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../seckill/target/classes/org/seckill/service/SeckillService.class" afterPath="$PROJECT_DIR$/../../seckill/target/classes/org/seckill/service/SeckillService.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../seckill/target/seckill/WEB-INF/classes/org/seckill/dao/SeckillDao.class" afterPath="$PROJECT_DIR$/../../seckill/target/seckill/WEB-INF/classes/org/seckill/dao/SeckillDao.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../seckill/target/seckill/WEB-INF/classes/org/seckill/service/Impl/SeckillServiceImpl.class" afterPath="$PROJECT_DIR$/../../seckill/target/seckill/WEB-INF/classes/org/seckill/service/Impl/SeckillServiceImpl.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../seckill/target/seckill/WEB-INF/classes/org/seckill/service/SeckillService.class" afterPath="$PROJECT_DIR$/../../seckill/target/seckill/WEB-INF/classes/org/seckill/service/SeckillService.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../seckill/target/seckill/WEB-INF/classes/org/seckill/web/SeckillController.class" afterPath="$PROJECT_DIR$/../../seckill/target/seckill/WEB-INF/classes/org/seckill/web/SeckillController.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../seckill/src/main/java/org/seckill/dao/SeckillDao.java" afterPath="$PROJECT_DIR$/../../seckill/src/main/java/org/seckill/dao/SeckillDao.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../seckill/src/main/java/org/seckill/service/Impl/SeckillServiceImpl.java" afterPath="$PROJECT_DIR$/../../seckill/src/main/java/org/seckill/service/Impl/SeckillServiceImpl.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../seckill/src/main/java/org/seckill/service/SeckillService.java" afterPath="$PROJECT_DIR$/../../seckill/src/main/java/org/seckill/service/SeckillService.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../seckill/src/main/java/org/seckill/web/SeckillController.java" afterPath="$PROJECT_DIR$/../../seckill/src/main/java/org/seckill/web/SeckillController.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../seckill/src/main/resources/mapper/SeckillDao.xml" afterPath="$PROJECT_DIR$/../../seckill/src/main/resources/mapper/SeckillDao.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../seckill/src/main/webapp/WEB-INF/jsp/detail.jsp" afterPath="$PROJECT_DIR$/../../seckill/src/main/webapp/WEB-INF/jsp/detail.jsp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../seckill/src/main/webapp/WEB-INF/jsp/list.jsp" afterPath="$PROJECT_DIR$/../../seckill/src/main/webapp/WEB-INF/jsp/list.jsp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../seckill/src/main/webapp/index.jsp" afterPath="$PROJECT_DIR$/../../seckill/src/main/webapp/index.jsp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../seckill/src/main/webapp/resource/script/seckill.js" afterPath="$PROJECT_DIR$/../../seckill/src/main/webapp/resource/script/seckill.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../seckill/target/classes/mapper/SeckillDao.xml" afterPath="$PROJECT_DIR$/../../seckill/target/classes/mapper/SeckillDao.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../seckill/target/seckill/WEB-INF/classes/mapper/SeckillDao.xml" afterPath="$PROJECT_DIR$/../../seckill/target/seckill/WEB-INF/classes/mapper/SeckillDao.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../seckill/target/seckill/WEB-INF/jsp/detail.jsp" afterPath="$PROJECT_DIR$/../../seckill/target/seckill/WEB-INF/jsp/detail.jsp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../seckill/target/seckill/WEB-INF/jsp/list.jsp" afterPath="$PROJECT_DIR$/../../seckill/target/seckill/WEB-INF/jsp/list.jsp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../seckill/target/seckill/index.jsp" afterPath="$PROJECT_DIR$/../../seckill/target/seckill/index.jsp" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
@@ -91,8 +60,8 @@
       <file leaf-file-name="addGood.jsp" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/../../seckill/src/main/webapp/WEB-INF/jsp/addGood.jsp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="161">
-              <caret line="33" column="30" lean-forward="true" selection-start-line="33" selection-start-column="30" selection-end-line="33" selection-end-column="30" />
+            <state relative-caret-position="207">
+              <caret line="35" column="63" lean-forward="false" selection-start-line="35" selection-start-column="63" selection-end-line="35" selection-end-column="63" />
               <folding />
             </state>
           </provider>
@@ -931,7 +900,7 @@
       <workItem from="1526291729910" duration="731000" />
       <workItem from="1526350274275" duration="1072000" />
       <workItem from="1526351937707" duration="15149000" />
-      <workItem from="1526368620754" duration="14957000" />
+      <workItem from="1526368620754" duration="15057000" />
     </task>
     <task id="LOCAL-00001" summary="test">
       <created>1526289761842</created>
@@ -940,7 +909,21 @@
       <option name="project" value="LOCAL" />
       <updated>1526289761842</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="test">
+      <created>1526387080673</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1526387080673</updated>
+    </task>
+    <task id="LOCAL-00003" summary="test">
+      <created>1526387141048</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1526387141048</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TestHistory">
@@ -976,7 +959,7 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="99363000" />
+    <option name="totallyTimeSpent" value="99463000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
@@ -999,10 +982,10 @@
       <window_info id="Image Layers" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Java Enterprise" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="12" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.27958834" sideWeight="0.46217853" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.7118353" sideWeight="0.46217853" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Spring" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="13" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.18150684" sideWeight="0.6429652" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.19210978" sideWeight="0.6429652" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2344932" sideWeight="0.5" order="4" side_tool="false" content_ui="combo" />
       <window_info id="Web" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Theme Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
@@ -1466,8 +1449,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/../../seckill/src/main/webapp/WEB-INF/jsp/addGood.jsp">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="161">
-          <caret line="33" column="30" lean-forward="true" selection-start-line="33" selection-start-column="30" selection-end-line="33" selection-end-column="30" />
+        <state relative-caret-position="207">
+          <caret line="35" column="63" lean-forward="false" selection-start-line="35" selection-start-column="63" selection-end-line="35" selection-end-column="63" />
           <folding />
         </state>
       </provider>
