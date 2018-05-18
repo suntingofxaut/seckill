@@ -6,84 +6,7 @@
     </artifacts-to-build>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="4836845f-9361-4038-8ad9-a0527b94c656" name="Default" comment="test">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../../seckill/src/main/webapp/resource/picture/1001/i81.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../../seckill/src/main/webapp/resource/picture/1001/i82.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../../seckill/src/main/webapp/resource/picture/1001/i83.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../../seckill/src/main/webapp/resource/picture/1002/i81.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../../seckill/src/main/webapp/resource/picture/1002/i82.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../../seckill/src/main/webapp/resource/picture/1002/i83.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../../seckill/src/main/webapp/resource/picture/1003/i81.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../../seckill/src/main/webapp/resource/picture/1003/i82.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../../seckill/src/main/webapp/resource/picture/1003/i83.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../../seckill/src/main/webapp/resource/picture/1005/i81.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../../seckill/src/main/webapp/resource/picture/1005/i82.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../../seckill/src/main/webapp/resource/picture/1005/i83.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../../seckill/src/main/webapp/resource/picture/1006/i81.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../../seckill/src/main/webapp/resource/picture/1006/i82.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../../seckill/src/main/webapp/resource/picture/1006/i83.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../../seckill/src/main/webapp/resource/picture/1007/i81.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../../seckill/src/main/webapp/resource/picture/1007/i82.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../../seckill/src/main/webapp/resource/picture/1007/i83.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../../seckill/src/main/webapp/resource/picture/1008/i81.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../../seckill/src/main/webapp/resource/picture/1008/i82.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../../seckill/src/main/webapp/resource/picture/1008/i83.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../../seckill/src/main/java/org/seckill/dao/SellerDao.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../../seckill/src/main/java/org/seckill/dao/UserDao.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../../seckill/src/main/java/org/seckill/entity/Seller.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../../seckill/src/main/java/org/seckill/entity/User.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../../seckill/src/main/java/org/seckill/service/Impl/SellerServiceImpl.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../../seckill/src/main/java/org/seckill/service/Impl/UserServiceImpl.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../../seckill/src/main/java/org/seckill/service/SellerService.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../../seckill/src/main/java/org/seckill/service/UserService.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../../seckill/src/main/resources/mapper/SellerDao.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../../seckill/src/main/resources/mapper/UserDao.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../../seckill/src/main/webapp/WEB-INF/jsp/login.jsp" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../../seckill/src/test/java/org/seckill/service/Impl/UserServiceImplTest.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../../seckill/src/test/java/org/seckill/web/SeckillControllerTest.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../seckill/src/main/webapp/resource/picture/1004/i81.jpg" afterPath="$PROJECT_DIR$/../../seckill/src/main/webapp/resource/picture/1004/i81.jpg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../seckill/src/main/webapp/resource/picture/1004/i82.jpg" afterPath="$PROJECT_DIR$/../../seckill/src/main/webapp/resource/picture/1004/i82.jpg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../seckill/src/main/webapp/resource/picture/1004/i83.jpg" afterPath="$PROJECT_DIR$/../../seckill/src/main/webapp/resource/picture/1004/i83.jpg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../seckill/target/classes/org/seckill/entity/Seckill.class" afterPath="$PROJECT_DIR$/../../seckill/target/classes/org/seckill/entity/Seckill.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../seckill/target/classes/org/seckill/enums/SeckillStatEnum.class" afterPath="$PROJECT_DIR$/../../seckill/target/classes/org/seckill/enums/SeckillStatEnum.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../seckill/target/classes/org/seckill/service/Impl/SeckillServiceImpl.class" afterPath="$PROJECT_DIR$/../../seckill/target/classes/org/seckill/service/Impl/SeckillServiceImpl.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../seckill/target/classes/org/seckill/web/SeckillController.class" afterPath="$PROJECT_DIR$/../../seckill/target/classes/org/seckill/web/SeckillController.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../seckill/target/seckill/WEB-INF/classes/org/seckill/entity/Seckill.class" afterPath="$PROJECT_DIR$/../../seckill/target/seckill/WEB-INF/classes/org/seckill/entity/Seckill.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../seckill/target/seckill/WEB-INF/classes/org/seckill/enums/SeckillStatEnum.class" afterPath="$PROJECT_DIR$/../../seckill/target/seckill/WEB-INF/classes/org/seckill/enums/SeckillStatEnum.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../seckill/target/seckill/WEB-INF/classes/org/seckill/service/Impl/SeckillServiceImpl.class" afterPath="$PROJECT_DIR$/../../seckill/target/seckill/WEB-INF/classes/org/seckill/service/Impl/SeckillServiceImpl.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../seckill/target/seckill/WEB-INF/classes/org/seckill/web/SeckillController.class" afterPath="$PROJECT_DIR$/../../seckill/target/seckill/WEB-INF/classes/org/seckill/web/SeckillController.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../seckill/src/main/java/org/seckill/dao/SeckillDao.java" afterPath="$PROJECT_DIR$/../../seckill/src/main/java/org/seckill/dao/SeckillDao.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../seckill/src/main/java/org/seckill/dao/SuccessKilledDao.java" afterPath="$PROJECT_DIR$/../../seckill/src/main/java/org/seckill/dao/SuccessKilledDao.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../seckill/src/main/java/org/seckill/entity/Seckill.java" afterPath="$PROJECT_DIR$/../../seckill/src/main/java/org/seckill/entity/Seckill.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../seckill/src/main/java/org/seckill/enums/SeckillStatEnum.java" afterPath="$PROJECT_DIR$/../../seckill/src/main/java/org/seckill/enums/SeckillStatEnum.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../seckill/src/main/java/org/seckill/service/Impl/SeckillServiceImpl.java" afterPath="$PROJECT_DIR$/../../seckill/src/main/java/org/seckill/service/Impl/SeckillServiceImpl.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../seckill/src/main/java/org/seckill/service/SeckillService.java" afterPath="$PROJECT_DIR$/../../seckill/src/main/java/org/seckill/service/SeckillService.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../seckill/src/main/java/org/seckill/web/SeckillController.java" afterPath="$PROJECT_DIR$/../../seckill/src/main/java/org/seckill/web/SeckillController.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../seckill/src/main/resources/mapper/SeckillDao.xml" afterPath="$PROJECT_DIR$/../../seckill/src/main/resources/mapper/SeckillDao.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../seckill/src/main/resources/mapper/SuccessKilledDao.xml" afterPath="$PROJECT_DIR$/../../seckill/src/main/resources/mapper/SuccessKilledDao.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../seckill/src/main/resources/mybatis-config.xml" afterPath="$PROJECT_DIR$/../../seckill/src/main/resources/mybatis-config.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../seckill/src/main/webapp/WEB-INF/jsp/addGood.jsp" afterPath="$PROJECT_DIR$/../../seckill/src/main/webapp/WEB-INF/jsp/addGood.jsp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../seckill/src/main/webapp/WEB-INF/jsp/common/head.jsp" afterPath="$PROJECT_DIR$/../../seckill/src/main/webapp/WEB-INF/jsp/common/head.jsp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../seckill/src/main/webapp/WEB-INF/jsp/detail.jsp" afterPath="$PROJECT_DIR$/../../seckill/src/main/webapp/WEB-INF/jsp/detail.jsp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../seckill/src/main/webapp/WEB-INF/jsp/list.jsp" afterPath="$PROJECT_DIR$/../../seckill/src/main/webapp/WEB-INF/jsp/list.jsp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../seckill/src/main/webapp/WEB-INF/jsp/listSeller.jsp" afterPath="$PROJECT_DIR$/../../seckill/src/main/webapp/WEB-INF/jsp/listSeller.jsp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../seckill/src/main/webapp/WEB-INF/jsp/modifyGood.jsp" afterPath="$PROJECT_DIR$/../../seckill/src/main/webapp/WEB-INF/jsp/modifyGood.jsp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../seckill/src/main/webapp/index.jsp" afterPath="$PROJECT_DIR$/../../seckill/src/main/webapp/index.jsp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../seckill/src/main/webapp/resource/script/seckill.js" afterPath="$PROJECT_DIR$/../../seckill/src/main/webapp/resource/script/seckill.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../seckill/target/classes/mapper/SeckillDao.xml" afterPath="$PROJECT_DIR$/../../seckill/target/classes/mapper/SeckillDao.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../seckill/target/classes/mapper/SuccessKilledDao.xml" afterPath="$PROJECT_DIR$/../../seckill/target/classes/mapper/SuccessKilledDao.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../seckill/target/classes/mybatis-config.xml" afterPath="$PROJECT_DIR$/../../seckill/target/classes/mybatis-config.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../seckill/target/seckill/WEB-INF/classes/mapper/SeckillDao.xml" afterPath="$PROJECT_DIR$/../../seckill/target/seckill/WEB-INF/classes/mapper/SeckillDao.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../seckill/target/seckill/WEB-INF/classes/mapper/SuccessKilledDao.xml" afterPath="$PROJECT_DIR$/../../seckill/target/seckill/WEB-INF/classes/mapper/SuccessKilledDao.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../seckill/target/seckill/WEB-INF/classes/mybatis-config.xml" afterPath="$PROJECT_DIR$/../../seckill/target/seckill/WEB-INF/classes/mybatis-config.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../seckill/target/seckill/WEB-INF/jsp/common/head.jsp" afterPath="$PROJECT_DIR$/../../seckill/target/seckill/WEB-INF/jsp/common/head.jsp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../seckill/target/seckill/WEB-INF/jsp/detail.jsp" afterPath="$PROJECT_DIR$/../../seckill/target/seckill/WEB-INF/jsp/detail.jsp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../seckill/target/seckill/WEB-INF/jsp/list.jsp" afterPath="$PROJECT_DIR$/../../seckill/target/seckill/WEB-INF/jsp/list.jsp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../seckill/target/seckill/index.jsp" afterPath="$PROJECT_DIR$/../../seckill/target/seckill/index.jsp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../seckill/target/seckill/resource/script/seckill.js" afterPath="$PROJECT_DIR$/../../seckill/target/seckill/resource/script/seckill.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/dataSources/a92ffb49-258f-4eee-9310-ab96d26a47cf.xml" afterPath="$PROJECT_DIR$/.idea/dataSources/a92ffb49-258f-4eee-9310-ab96d26a47cf.xml" />
+    <list default="true" id="4836845f-9361-4038-8ad9-a0527b94c656" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
@@ -210,6 +133,7 @@
     </findStrings>
   </component>
   <component name="Git.Settings">
+    <option name="ROOT_SYNC" value="DONT_SYNC" />
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../.." />
   </component>
   <component name="GradleLocalSettings">
@@ -1037,7 +961,7 @@
       <workItem from="1526553118782" duration="9244000" />
       <workItem from="1526571834502" duration="3051000" />
       <workItem from="1526611884871" duration="12702000" />
-      <workItem from="1526632191364" duration="2246000" />
+      <workItem from="1526632191364" duration="2521000" />
     </task>
     <task id="LOCAL-00001" summary="test">
       <created>1526289761842</created>
@@ -1067,7 +991,14 @@
       <option name="project" value="LOCAL" />
       <updated>1526387192867</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="test">
+      <created>1526634547987</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1526634547997</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TestHistory">
@@ -1103,7 +1034,7 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="156448000" />
+    <option name="totallyTimeSpent" value="156723000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
