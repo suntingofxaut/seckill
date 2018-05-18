@@ -10,24 +10,24 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>秒杀列表页</title>
+    <title>抢购列表页</title>
     <%@include file="common/head.jsp"%>
 </head>
 <body>
 <div class="container">
     <div class="panel panel-default">
         <div class="panel-heading text-center">
-            <h2>秒杀列表</h2>
+            <h2>抢购列表</h2>
         </div>
         <div class="panel-body">
             <table class="table table-hover">
                 <thead>
                 <tr>
-                    <th>名称</th>
+                    <th>商品名称</th>
                     <th>库存</th>
                     <th>开始时间</th>
                     <th>结束时间</th>
-                    <th>创建时间</th>
+                    <%--<th>创建时间</th>--%>
                     <th>详情页</th>
                 </tr>
                 </thead>
@@ -42,9 +42,9 @@
                         <td>
                             <fmt:formatDate value="${sk.endTime}" pattern="yyyy-MM-dd HH:mm:ss" />
                         </td>
-                        <td>
-                            <fmt:formatDate value="${sk.createTime}" pattern="yyyy-MM-dd HH:mm:ss" />
-                        </td>
+                        <%--<td>--%>
+                            <%--<fmt:formatDate value="${sk.createTime}" pattern="yyyy-MM-dd HH:mm:ss" />--%>
+                        <%--</td>--%>
                         <td><a class="btn btn-info" href="/seckill/${sk.seckillId}/detail" target="_blank">详情</a></td>
                     </tr>
                 </c:forEach>

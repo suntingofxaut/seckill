@@ -1,9 +1,8 @@
 //存放主要交互逻辑的js代码
 // javascript 模块化(package.类.方法)
-
 var seckill = {
 
-    //封装秒杀相关ajax的url
+    //封装抢购相关ajax的url
     URL: {
         now: function () {
             return '/seckill/time/now';
@@ -25,7 +24,7 @@ var seckill = {
         }
     },
 
-    //详情页秒杀逻辑
+    //详情页抢购逻辑
     detail: {
         //详情页初始化
         init: function (params) {
@@ -51,7 +50,6 @@ var seckill = {
                         //验证通过　　刷新页面
                         window.location.reload();
                     } else {
-                        //todo 错误文案信息抽取到前端字典里
                         $('#killPhoneMessage').hide().html('<label class="label label-danger">手机号错误!</label>').show(300);
                     }
                 });
@@ -76,38 +74,38 @@ var seckill = {
     },
 
     handlerSeckill: function (seckillId, node) {
-        //获取秒杀地址,控制显示器,执行秒杀
-        node.hide().html('<button class="btn btn-primary btn-lg" id="killBtn">开始秒杀</button>');
+        //获取抢购地址,控制显示器,执行抢购
+        node.hide().html('<button class="btn btn-primary btn-lg" id="killBtn">开始抢购</button>');
 
         $.post(seckill.URL.exposer(seckillId), {}, function (result) {
             //在回调函数种执行交互流程
             if (result && result['success']) {
                 var exposer = result['data'];
                 if (exposer['exposed']) {
-                    //开启秒杀
-                    //获取秒杀地址
+                    //开启抢购
+                    //获取抢购地址
                     var md5 = exposer['md5'];
                     var killUrl = seckill.URL.execution(seckillId, md5);
                     console.log("killUrl: " + killUrl);
                     //绑定一次点击事件
                     $('#killBtn').one('click', function () {
-                        //执行秒杀请求
+                        //执行抢购请求
                         //1.先禁用按钮
                         $(this).addClass('disabled');//,<-$(this)===('#killBtn')->
-                        //2.发送秒杀请求执行秒杀
+                        //2.发送抢购请求执行抢购
                         $.post(killUrl, {}, function (result) {
                             if (result && result['success']) {
                                 var killResult = result['data'];
                                 var state = killResult['state'];
                                 var stateInfo = killResult['stateInfo'];
-                                //显示秒杀结果
+                                //显示抢购结果
                                 node.html('<span class="label label-success">' + stateInfo + '</span>');
                             }
                         });
                     });
                     node.show();
                 } else {
-                    //未开启秒杀(浏览器计时偏差)
+                    //未开启抢购(浏览器计时偏差)
                     var now = exposer['now'];
                     var start = exposer['start'];
                     var end = exposer['end'];
@@ -124,48 +122,124 @@ var seckill = {
         console.log(seckillId + '_' + nowTime + '_' + startTime + '_' + endTime);
         var seckillBox = $('#seckill-box');
         if (nowTime > endTime) {
-            //秒杀结束
-            seckillBox.html('秒杀结束!');
+            //抢购结束
+            seckillBox.html('抢购结束!');
         } else if (nowTime < startTime) {
-            //秒杀未开始,计时事件绑定
-            var killTime = new Date(startTime + 1000);//todo 防止时间偏移
+            //抢购未开始,计时事件绑定
+            var killTime = new Date(startTime + 1000);//防止时间偏移
             seckillBox.countdown(killTime, function (event) {
                 //时间格式
-                var format = event.strftime('秒杀倒计时: %D天 %H时 %M分 %S秒 ');
+                var format = event.strftime('抢购倒计时: %D天 %H时 %M分 %S秒 ');
                 seckillBox.html(format);
             }).on('finish.countdown', function () {
                 //时间完成后回调事件
-                //获取秒杀地址,控制现实逻辑,执行秒杀
+                //获取抢购地址,控制现实逻辑,执行秒杀
                 console.log('______fininsh.countdown');
                 seckill.handlerSeckill(seckillId, seckillBox);
             });
         } else {
-            //秒杀开始
+            //抢购开始
             seckill.handlerSeckill(seckillId, seckillBox);
         }
     },
 
-    addGood :function (nane, number, startTime, endTime) {
-        $("#submit").click(function(){
-            $.ajax({
-                type: "post",
-                url: "seckill/add",
-                contentType: "application/json",
-                data: JSON.stringify({
-                    "nane": "100",
-                    "number": "1",
-                    "startTime" :"0",
-                    "endTime" : "0",
-                }),
-                dataType: 'json',
-                success: function (data) {
-                    alert(data);
-                },
-                error: function () {
-                    alert('exception');
-                }
-            });
-        });
-    }
+    addGood: function (name, number, startTime, endTime) {
+        $.ajax({
+            type: "post",
+            url: "addGoodH",
+            contentType: "application/json",
+            data: JSON.stringify({
+                "name": name,
+                "number": number,
+                "startTime": startTime,
+                "endTime": endTime
+            }),
+            dataType: 'json',
+            success: function () {
+                alert("商品信息添加成功！1");
+            },
+            error: function () {
+                 alert("商品信息添加失败！1");
+            }
+        })
+        alert("商品信息添加成功！");
+        window.close();
+        window.open('listSeller');
+    },
 
+    updateGood: function (name, number, startTime, endTime) {
+        $.ajax({
+            type: "post",
+            url: "modifyGoodH",
+            contentType: "application/json",
+            data: JSON.stringify({
+                "name": name,
+                "number": number,
+                "startTime": startTime,
+                "endTime": endTime
+            }),
+            dataType: 'json',
+            success: function () {
+                alert("商品信息修改成功！1");
+            },
+            error: function () {
+                 alert('商品信息修改失败！1');
+            }
+        })
+        alert("商品信息修改成功！");
+        window.close();
+        window.open('../listSeller');
+    },
+
+    userlogin: function (userNameText, passwordText) {
+        $.ajax({
+            type: "post",
+            url: "/seckill/userlogin",
+            contentType: "application/json",
+            data: JSON.stringify({
+                "name": userNameText,
+                "password": passwordText,
+            }),
+            dataType: 'json',
+            async:false,
+            success: function (count) {
+                if(count > 0){
+                    alert('登录成功！');
+                    window.open('list');
+                    window.close();
+                }else {
+                    alert('用户名或密码错误！');
+                }
+            },
+            error: function () {
+                alert('系统错误！');
+            }
+        })
+    },
+
+    sellerlogin: function (userNameText, passwordText) {
+        $.ajax({
+            type: "post",
+            url: "/seckill/sellerlogin",
+            contentType: "application/json",
+            data: JSON.stringify({
+                "name": userNameText,
+                "password": passwordText,
+            }),
+            dataType: 'json',
+            async:false,
+            success: function (count) {
+                if (count > 0) {
+                    alert('登录成功！');
+                    window.open('listSeller');
+                    window.close();
+                } else {
+                    alert('用户名或密码错误！');
+                }
+            },
+            error: function () {
+                alert('系统错误！');
+            }
+        })
+    },
 }

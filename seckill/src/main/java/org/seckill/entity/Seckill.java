@@ -18,6 +18,8 @@ public class Seckill {
 
     private Date endTime;
 
+    private Date createTime;
+
     public Date getCreateTime() {
         return createTime;
     }
@@ -25,8 +27,6 @@ public class Seckill {
     public void setCreateTime(Date createTime) {
         this.createTime = createTime;
     }
-
-    private Date createTime;
 
     public long getSeckillId() {
         return seckillId;

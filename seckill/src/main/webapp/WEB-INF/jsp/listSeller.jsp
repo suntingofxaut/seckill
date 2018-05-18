@@ -17,7 +17,7 @@
 <div class="container">
     <div class="panel panel-default">
         <div class="panel-heading text-center">
-            <h2>秒杀列表</h2>
+            <h2>抢购列表</h2>
         </div>
         <div class="panel-body">
             <table class="table table-hover">
@@ -46,8 +46,8 @@
                             <fmt:formatDate value="${sk.createTime}" pattern="yyyy-MM-dd HH:mm:ss" />
                         </td>
                         <td>
-                            <a class="btn btn-info" href="/seckill/${sk.seckillId}/modify" target="_blank">修改</a>
-                            <a class="btn btn-info" href="/seckill/${sk.seckillId}/delete" target="_blank">删除</a>
+                            <a class="btn btn-info" href="/seckill/${sk.seckillId}/modify" >修改</a>
+                            <a class="btn btn-info" href="/seckill/${sk.seckillId}/delete" >删除</a>
                         </td>
                     </tr>
                 </c:forEach>
@@ -55,7 +55,7 @@
             </table>
         </div>
         <div class="panel-heading text-center">
-            <h2 ><a class="btn btn-info" href="/seckill/add" target="_blank">添加商品</a> </h2>
+            <h2 ><a class="btn btn-info" href="/seckill/add">添加商品</a> </h2>
         </div>
     </div>
 </div>
@@ -69,7 +69,7 @@
                 <div class="col-md-4 column">
                     <ul class="pagination">
                         <li>
-                            <a href="#">Prev</a>
+                            <a href="#">上一页</a>
                         </li>
                         <li>
                             <a href="#">1</a>
@@ -87,7 +87,7 @@
                             <a href="#">5</a>
                         </li>
                         <li>
-                            <a href="#">Next</a>
+                            <a href="#">下一页</a>
                         </li>
                     </ul>
                 </div>

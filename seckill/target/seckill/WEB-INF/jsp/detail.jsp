@@ -10,7 +10,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>秒杀详情页</title>
+    <title>抢购详情页</title>
     <%@include file="common/head.jsp" %>
 </head>
 <body>
@@ -37,7 +37,7 @@
                                     <img alt="" src="../../resource/picture/${seckill.seckillId}/i81.jpg"/>
                                     <div class="carousel-caption">
                                         <h4>
-                                            First Thumbnail label
+                                            First Thumbnail
                                         </h4>
                                         <p>
                                             Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit
@@ -50,7 +50,7 @@
                                     <img alt="" src="../../resource/picture/${seckill.seckillId}/i82.jpg"/>
                                     <div class="carousel-caption">
                                         <h4>
-                                            Second Thumbnail label
+                                            Second Thumbnail
                                         </h4>
                                         <p>
                                             Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit
@@ -63,7 +63,7 @@
                                     <img alt="" src="../../resource/picture/${seckill.seckillId}/i83.jpg"/>
                                     <div class="carousel-caption">
                                         <h4>
-                                            Third Thumbnail label
+                                            Third Thumbnail
                                         </h4>
                                         <p>
                                             Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit

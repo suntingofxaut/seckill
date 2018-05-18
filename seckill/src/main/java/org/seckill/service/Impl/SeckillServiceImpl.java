@@ -13,13 +13,11 @@ import org.seckill.exception.SeckillExecption;
 import org.seckill.service.SeckillService;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 import org.springframework.util.DigestUtils;
 
 import javax.annotation.Resource;
-import javax.annotation.Resources;
 import java.util.Date;
 import java.util.List;
 
@@ -65,22 +63,22 @@ public class SeckillServiceImpl implements SeckillService {
             throw new SeckillExecption("SecKill data was rewrited！");
         }
         try {
-            //执行秒杀逻辑
+            //执行抢购逻辑
             Date nowTime = new Date();
             //减库存
             int updateCount = seckillDao.reduceNumber(seckillId, nowTime);
             if (updateCount <= 0) {
-                //没有更新操作，秒杀结束
+                //没有更新操作，抢购结束
                 throw new SeckillCloseExeception("Seckill is closed!");
             } else {
                 //减库存成功，记录购买行为
                 int insertCount = successKilledDao.insertSuccessKilled(seckillId, userphone);
                 //唯一:seckillId和userphone
                 if (insertCount <= 0) {
-                    //重复秒杀
+                    //重复抢购
                     throw new RepeatKillExeception("seckill repeat!");
                 } else {
-                    //秒杀成功
+                    //抢购成功
                     SuccessKilled successKilled = successKilledDao.queryByIdWithSeckill(seckillId, userphone);
                     return new SeckillExecution(seckillId, SeckillStatEnum.SUCCESS, successKilled);
                 }

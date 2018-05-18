@@ -4,10 +4,14 @@ import org.seckill.dto.Exposer;
 import org.seckill.dto.SeckillExecution;
 import org.seckill.dto.SeckillResult;
 import org.seckill.entity.Seckill;
+import org.seckill.entity.Seller;
+import org.seckill.entity.User;
 import org.seckill.enums.SeckillStatEnum;
 import org.seckill.exception.RepeatKillExeception;
 import org.seckill.exception.SeckillCloseExeception;
 import org.seckill.service.SeckillService;
+import org.seckill.service.SellerService;
+import org.seckill.service.UserService;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -15,6 +19,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 
+import javax.annotation.Resource;
 import javax.servlet.http.HttpServletRequest;
 import java.util.Date;
 import java.util.List;
@@ -27,6 +32,12 @@ public class SeckillController {
 
     @Autowired
     private SeckillService seckillService;
+    @Autowired
+    private UserService userService;
+    @Autowired
+    private SellerService sellerService;
+
+    private Long seckillIdtmp;
 
     @RequestMapping(value = "/list", method = RequestMethod.GET)
     public String list(Model model) {
@@ -42,9 +53,39 @@ public class SeckillController {
         return "listSeller";
     }
 
-    @RequestMapping(value = "/{seckillId}/modify" ,method = RequestMethod.GET)
-    public String modify(@RequestBody Seckill seckill){
+    @RequestMapping(value = "/{seckillId}/modify", method = {RequestMethod.GET , RequestMethod.POST })
+    public String modify(@PathVariable("seckillId") Long seckillId){
+        seckillIdtmp = seckillId;
         return "modifyGood";
+    }
+
+    @RequestMapping(value = "/{seckillId}/modifyGoodH" ,method = RequestMethod.POST)
+    public String modifyGoodH(@RequestBody Seckill seckill ){
+        seckillService.updateSeckillGood(seckill);
+        return "redirect:/seckill/listSeller";
+    }
+
+    @RequestMapping(value = "/login", method = {RequestMethod.GET , RequestMethod.POST })
+    public String login(){
+        return "login";
+    }
+
+    @ResponseBody
+    @RequestMapping(value = "/userlogin", method =  {RequestMethod.GET , RequestMethod.POST } )
+    public String userlogin(@RequestBody User user ){
+        System.out.println("前端传来的买家账号信息："+user.toString());
+        Integer count = userService.getCount(user);
+        System.out.println("买家用户名密码匹配条数查询结果："+count.toString());
+        return count.toString();
+    }
+
+    @ResponseBody
+    @RequestMapping(value = "/sellerlogin", method = {RequestMethod.GET , RequestMethod.POST } )
+    public String sellerlogin(@RequestBody Seller seller ){
+        System.out.println("前端传来的卖家账号信息："+seller.toString());
+        Integer count = sellerService.getCount(seller);
+        System.out.println("管理员用户名密码匹配条数查询结果："+count.toString());
+        return count.toString();
     }
 
     @RequestMapping(value = "/{seckillId}/delete" ,method = RequestMethod.GET)
@@ -53,10 +94,20 @@ public class SeckillController {
         return "redirect:/seckill/listSeller";
     }
 
-    @RequestMapping(value = "/add" ,method = RequestMethod.GET)
-    public String add(@RequestBody Seckill seckill ){
-        System.out.println("addGood seckill:"+ seckill.toString());
+    @RequestMapping(value = "/add" ,method = {RequestMethod.GET , RequestMethod.POST })
+    public String add(){
         return "addGood";
+    }
+
+    @RequestMapping(value = "/addGoodH" ,method = RequestMethod.POST)
+    public String addGoodH(@RequestBody Seckill seckill ){
+        System.out.println(seckill.getName());
+        System.out.println(seckill.getNumber());
+        System.out.println(seckill.getStartTime());
+        System.out.println(seckill.getEndTime());
+
+        seckillService.addSeckillGood(seckill);
+        return "redirect:/seckill/listSeller";
     }
 
     @RequestMapping(value = "/{seckillId}/detail", method = RequestMethod.GET)
