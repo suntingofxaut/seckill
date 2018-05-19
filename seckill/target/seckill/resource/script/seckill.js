@@ -161,10 +161,10 @@ var seckill = {
             error: function () {
                  alert("商品信息添加失败！1");
             }
-        })
+        });
         alert("商品信息添加成功！");
-        window.close();
         window.open('listSeller');
+        window.close();
     },
 
     updateGood: function (name, number, startTime, endTime) {
@@ -187,8 +187,8 @@ var seckill = {
             }
         })
         alert("商品信息修改成功！");
-        window.close();
         window.open('../listSeller');
+        window.close();
     },
 
     userlogin: function (userNameText, passwordText) {
@@ -241,5 +241,5 @@ var seckill = {
                 alert('系统错误！');
             }
         })
-    },
-}
+    }
+};

@@ -18,12 +18,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
-
-import javax.annotation.Resource;
-import javax.servlet.http.HttpServletRequest;
 import java.util.Date;
 import java.util.List;
-
 @Controller
 @RequestMapping("/seckill")
 public class SeckillController {
@@ -61,6 +57,8 @@ public class SeckillController {
 
     @RequestMapping(value = "/{seckillId}/modifyGoodH" ,method = RequestMethod.POST)
     public String modifyGoodH(@RequestBody Seckill seckill ){
+        seckill.setSeckillId(seckillIdtmp);
+        System.out.println("修改商品："+seckill.toString());
         seckillService.updateSeckillGood(seckill);
         return "redirect:/seckill/listSeller";
     }
@@ -101,11 +99,7 @@ public class SeckillController {
 
     @RequestMapping(value = "/addGoodH" ,method = RequestMethod.POST)
     public String addGoodH(@RequestBody Seckill seckill ){
-        System.out.println(seckill.getName());
-        System.out.println(seckill.getNumber());
-        System.out.println(seckill.getStartTime());
-        System.out.println(seckill.getEndTime());
-
+        System.out.println("添加商品："+seckill.toString());
         seckillService.addSeckillGood(seckill);
         return "redirect:/seckill/listSeller";
     }
