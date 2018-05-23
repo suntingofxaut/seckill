@@ -18,6 +18,18 @@ public class Seckill {
 
     private Date endTime;
 
+    private Date createTime;
+
+    public String getState() {
+        return state;
+    }
+
+    public void setState(String state) {
+        this.state = state;
+    }
+
+    private String state;
+
     public Date getCreateTime() {
         return createTime;
     }
@@ -25,8 +37,6 @@ public class Seckill {
     public void setCreateTime(Date createTime) {
         this.createTime = createTime;
     }
-
-    private Date createTime;
 
     public long getSeckillId() {
         return seckillId;

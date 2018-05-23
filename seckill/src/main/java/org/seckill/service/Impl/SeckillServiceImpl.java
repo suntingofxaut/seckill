@@ -2,6 +2,7 @@ package org.seckill.service.Impl;
 
 import org.seckill.dao.SeckillDao;
 import org.seckill.dao.SuccessKilledDao;
+import org.seckill.dao.cache.RedisDao;
 import org.seckill.dto.Exposer;
 import org.seckill.dto.SeckillExecution;
 import org.seckill.entity.Seckill;
@@ -18,6 +19,7 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 import org.springframework.util.DigestUtils;
 
+import javax.annotation.Resource;
 import java.util.Date;
 import java.util.List;
 
@@ -29,8 +31,8 @@ public class SeckillServiceImpl implements SeckillService {
     private SeckillDao seckillDao;
     @Autowired
     private SuccessKilledDao successKilledDao;
-    //加入混淆盐值,随机
-    public final String salt = "asdaksjdn2342#$%%#$^wqwe@#!@#$#@%$^%6!@#SAFSG^#$%";
+    @Autowired
+    private RedisDao redisDao;
 
     public List<Seckill> getSeckillList() {
         return seckillDao.queryAll(0, 10);
@@ -41,9 +43,15 @@ public class SeckillServiceImpl implements SeckillService {
     }
 
     public Exposer exportSeckillUrl(long seckillId) {
-        Seckill seckill = seckillDao.queryById(seckillId);
-        if (seckill == null) {
-            return new Exposer(false, seckillId);
+        //缓存优化
+        Seckill seckill = redisDao.getSeckill(seckillId);
+        if(seckill==null){
+            seckill = seckillDao.queryById(seckillId);
+            if (seckill == null){
+                return new Exposer(false, seckillId);
+            }else{
+                redisDao.putSeckill(seckill);
+            }
         }
         Date startTime = seckill.getStartTime();
         Date endTime = seckill.getEndTime();
@@ -65,22 +73,22 @@ public class SeckillServiceImpl implements SeckillService {
             throw new SeckillExecption("SecKill data was rewrited！");
         }
         try {
-            //执行秒杀逻辑
+            //执行抢购逻辑
             Date nowTime = new Date();
             //减库存
             int updateCount = seckillDao.reduceNumber(seckillId, nowTime);
             if (updateCount <= 0) {
-                //没有更新操作，秒杀结束
+                //没有更新操作，抢购结束
                 throw new SeckillCloseExeception("Seckill is closed!");
             } else {
                 //减库存成功，记录购买行为
                 int insertCount = successKilledDao.insertSuccessKilled(seckillId, userphone);
                 //唯一:seckillId和userphone
                 if (insertCount <= 0) {
-                    //重复秒杀
+                    //重复抢购
                     throw new RepeatKillExeception("seckill repeat!");
                 } else {
-                    //秒杀成功
+                    //抢购成功
                     SuccessKilled successKilled = successKilledDao.queryByIdWithSeckill(seckillId, userphone);
                     return new SeckillExecution(seckillId, SeckillStatEnum.SUCCESS, successKilled);
                 }
@@ -96,7 +104,23 @@ public class SeckillServiceImpl implements SeckillService {
         }
     }
 
+    @Override
+    public int addSeckillGood(Seckill seckill) {
+        return seckillDao.add(seckill);
+    }
+
+    @Override
+    public int updateSeckillGood(Seckill seckill) {
+        return seckillDao.update(seckill);
+    }
+
+    @Override
+    public void deleteSeckillGoodById(Integer id) {
+        seckillDao.delete(id);
+    }
+
     private String getMD5(long seckillId) {
+        String salt = "asdaksjdn2342#$%%#$^wqwe@#!@#$#@%$^%6!@#SAFSG^#$%";
         String base = seckillId + "/" + salt;
         String md5 = DigestUtils.md5DigestAsHex(base.getBytes());
         return md5;

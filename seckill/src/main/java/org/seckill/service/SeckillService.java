@@ -10,22 +10,19 @@ import org.seckill.exception.SeckillExecption;
 import java.util.List;
 
 /**
- * 业务接口：站在“使用者”的角度设计接口
- * 方面：方法定义粒度、参数、返回值
- *
  * @author 孙挺
  * @version 0.0.1
  */
 public interface SeckillService {
     /**
-     * 查询所有秒杀记录
+     * 查询所有抢购记录
      *
      * @return
      */
     List<Seckill> getSeckillList();
 
     /**
-     * 查询单个秒杀记录
+     * 查询单个抢购记录
      *
      * @param seckillId id
      * @return
@@ -33,7 +30,7 @@ public interface SeckillService {
     Seckill getById(long seckillId);
 
     /**
-     * 秒杀开启时输出秒杀接口的地址，否则输出系统时间和开启时间
+     * 抢购开启时输出抢购接口的地址，否则输出系统时间和开启时间
      *
      * @param seckillId
      */
@@ -42,5 +39,9 @@ public interface SeckillService {
     SeckillExecution executeSeckil(long seckillId, long userphone, String md5)
             throws SeckillExecption,RepeatKillExeception,SeckillCloseExeception;
 
+    int addSeckillGood (Seckill seckill);
 
+    int updateSeckillGood (Seckill seckill);
+
+    void deleteSeckillGoodById (Integer id);
 }

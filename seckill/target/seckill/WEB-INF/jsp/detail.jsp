@@ -1,9 +1,16 @@
+<%--
+  Created by IntelliJ IDEA.
+  User: 孙挺
+  Date: 2018/4/15
+  Time: 13:51
+  To change this template use File | Settings | File Templates.
+--%>
 <%@page contentType="text/html; charset=UTF-8" language="java" %>
 <%@include file="common/tag.jsp" %>
 <!DOCTYPE html>
 <html>
 <head>
-    <title>秒杀详情页</title>
+    <title>抢购详情页</title>
     <%@include file="common/head.jsp" %>
 </head>
 <body>
@@ -11,6 +18,69 @@
     <div class="panel panel-default text-center">
         <div class="pannel-heading">
             <h1>${seckill.name}</h1>
+        </div>
+        <div class="panel panel-default text-center">
+            <div class="container">
+                <div class="row clearfix">
+                    <div class="col-md-12 column">
+                        <div class="carousel slide" id="carousel-288614">
+                            <ol class="carousel-indicators">
+                                <li class="active" data-slide-to="0" data-target="#carousel-288614">
+                                </li>
+                                <li data-slide-to="1" data-target="#carousel-288614">
+                                </li>
+                                <li data-slide-to="2" data-target="#carousel-288614">
+                                </li>
+                            </ol>
+                            <div class="carousel-inner">
+                                <div class="item active">
+                                    <img alt="" src="../../resource/picture/${seckill.seckillId}/i81.jpg"/>
+                                    <div class="carousel-caption">
+                                        <h4>
+                                            First Thumbnail
+                                        </h4>
+                                        <p>
+                                            Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit
+                                            non mi porta gravida at eget metus. Nullam id dolor id nibh ultricies
+                                            vehicula ut id elit.
+                                        </p>
+                                    </div>
+                                </div>
+                                <div class="item">
+                                    <img alt="" src="../../resource/picture/${seckill.seckillId}/i82.jpg"/>
+                                    <div class="carousel-caption">
+                                        <h4>
+                                            Second Thumbnail
+                                        </h4>
+                                        <p>
+                                            Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit
+                                            non mi porta gravida at eget metus. Nullam id dolor id nibh ultricies
+                                            vehicula ut id elit.
+                                        </p>
+                                    </div>
+                                </div>
+                                <div class="item">
+                                    <img alt="" src="../../resource/picture/${seckill.seckillId}/i83.jpg"/>
+                                    <div class="carousel-caption">
+                                        <h4>
+                                            Third Thumbnail
+                                        </h4>
+                                        <p>
+                                            Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit
+                                            non mi porta gravida at eget metus. Nullam id dolor id nibh ultricies
+                                            vehicula ut id elit.
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                            <a class="left carousel-control" href="#carousel-288614" data-slide="prev"><span
+                                    class="glyphicon glyphicon-chevron-left"></span></a> <a
+                                class="right carousel-control" href="#carousel-288614" data-slide="next"><span
+                                class="glyphicon glyphicon-chevron-right"></span></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
 
         <div class="panel-body">

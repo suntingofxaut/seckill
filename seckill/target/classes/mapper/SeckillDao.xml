@@ -17,7 +17,7 @@
         FROM seckill
         WHERE seckill_id = #{seckillId}
     </select>
-    
+
     <select id="queryAll" resultType="Seckill">
         SELECT seckill_id , NAME ,NUMBER,start_time,end_time,create_time
         FROM seckill
@@ -25,4 +25,24 @@
         limit #{offset},#{limit}
     </select>
 
+    <insert id="add" parameterType="Seckill" useGeneratedKeys="true" keyProperty="seckill_id" keyColumn="seckill_id">
+        INSERT INTO `seckill` ( `name` , `number` , `start_time` , `end_time` , `create_time`)
+        VALUES (#{name}, #{number}, #{startTime}, #{endTime}, now())
+    </insert>
+
+    <update id="update" parameterType="Seckill" useGeneratedKeys="true" keyProperty="seckill_id">
+        UPDATE `seckill`
+        SET
+        <if test="name != null ">name=#{name},</if>
+        <if test="number != null ">number=#{number},</if>
+        <if test="startTime != null ">start_time=#{startTime},</if>
+        <if test="endTime != null ">end_time=#{endTime}</if>
+        WHERE seckill_id=#{seckillId}
+    </update>
+
+    <delete id="delete" parameterType="int">
+        DELETE
+        FROM `seckill`
+        WHERE seckill_id = #{id}
+    </delete>
 </mapper>
