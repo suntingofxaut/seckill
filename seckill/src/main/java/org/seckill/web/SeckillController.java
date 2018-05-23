@@ -1,16 +1,17 @@
 package org.seckill.web;
 
+import org.seckill.dao.SuccessKilledDao;
 import org.seckill.dto.Exposer;
 import org.seckill.dto.SeckillExecution;
 import org.seckill.dto.SeckillResult;
-import org.seckill.entity.Seckill;
-import org.seckill.entity.Seller;
-import org.seckill.entity.User;
+import org.seckill.entity.*;
+import org.seckill.enums.GoodState;
 import org.seckill.enums.SeckillStatEnum;
 import org.seckill.exception.RepeatKillExeception;
 import org.seckill.exception.SeckillCloseExeception;
 import org.seckill.service.SeckillService;
 import org.seckill.service.SellerService;
+import org.seckill.service.SuccessKilledService;
 import org.seckill.service.UserService;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -18,6 +19,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
+
+import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 @Controller
@@ -32,12 +35,34 @@ public class SeckillController {
     private UserService userService;
     @Autowired
     private SellerService sellerService;
+    @Autowired
+    private SuccessKilledService successKilledService;
 
     private Long seckillIdtmp;
+
+    Long userPhone1 =18309299185L;
 
     @RequestMapping(value = "/list", method = RequestMethod.GET)
     public String list(Model model) {
         List<Seckill> list = seckillService.getSeckillList();
+        List<SuccessKilled> successKilleds = successKilledService.queryByUserPhone(userPhone1);
+        System.out.println(successKilleds);
+        for (Seckill seckill : list) {
+            if (seckill.getStartTime().getTime() > new Date().getTime()){
+                seckill.setState(GoodState.NOTSTART.getStateInfo());
+            }else if (seckill.getEndTime().getTime() < new Date().getTime()){
+                seckill.setState(GoodState.END.getStateInfo());
+            }else {
+                for (SuccessKilled successKilled : successKilleds) {
+                    if(seckill.getSeckillId() == successKilled.getSeckillId()){
+                        seckill.setState(GoodState.SECKILLED.getStateInfo());
+                    }
+                }
+                if (seckill.getState() == null){
+                    seckill.setState(GoodState.DOING.getStateInfo());
+                }
+            }
+        }
         model.addAttribute("list", list);
         return "list";
     }
@@ -45,8 +70,39 @@ public class SeckillController {
     @RequestMapping(value = "/listSeller", method = RequestMethod.GET)
     public String listSeller(Model model) {
         List<Seckill> list = seckillService.getSeckillList();
+        for (Seckill seckill : list) {
+            if (seckill.getStartTime().getTime() > new Date().getTime()) {
+                seckill.setState(GoodState.NOTSTART.getStateInfo());
+            } else if (seckill.getEndTime().getTime() < new Date().getTime()) {
+                seckill.setState(GoodState.END.getStateInfo());
+            }else{
+                seckill.setState(GoodState.DOING.getStateInfo());
+            }
+        }
         model.addAttribute("list", list);
         return "listSeller";
+    }
+
+    @RequestMapping(value = "/personalCenter", method = RequestMethod.GET )
+    public String personalCenter(Model model) {
+        List<Seckill> list = seckillService.getSeckillList();
+        List<SuccessKilled> successKilleds = successKilledService.queryByUserPhone(userPhone1);
+        List<PersonalGood> personalGoods = new ArrayList<PersonalGood>();
+        for(SuccessKilled successKilled :successKilleds){
+            for (Seckill seckill : list){
+                if (successKilled.getSeckillId() == seckill.getSeckillId()) {
+                    PersonalGood personalGood = new PersonalGood();
+                    personalGood.setSeckillId(seckill.getSeckillId());
+                    personalGood.setName(seckill.getName());
+                    personalGood.setNumber(1);
+                    personalGood.setCreateTime(successKilled.getCreateTime());
+                    personalGood.setState("成功");
+                    personalGoods.add(personalGood);
+                }
+            }
+        }
+        model.addAttribute("list", personalGoods);
+        return "personalCenter";
     }
 
     @RequestMapping(value = "/{seckillId}/modify", method = {RequestMethod.GET , RequestMethod.POST })
@@ -146,6 +202,7 @@ public class SeckillController {
         if(userPhone==null){
             return new SeckillResult<SeckillExecution>(false ,"未注册");
         }
+        userPhone1 = userPhone;
         try {
             SeckillExecution execution = seckillService.executeSeckil(seckillId, userPhone, md5);
             return new SeckillResult<SeckillExecution>(true, execution);

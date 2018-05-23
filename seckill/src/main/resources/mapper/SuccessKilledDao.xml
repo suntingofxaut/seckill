@@ -29,4 +29,10 @@
         INNER JOIN seckill s ON sk.seckill_id=s.seckill_id
         WHERE sk.seckill_id=#{secKillId} and sk.user_phone=#{userPhone}
     </select>
+
+    <select id="queryByUserPhone" resultType="SuccessKilled">
+        SELECT *
+        FROM success_killed
+        WHERE user_phone = #{userPhone}
+    </select>
 </mapper>

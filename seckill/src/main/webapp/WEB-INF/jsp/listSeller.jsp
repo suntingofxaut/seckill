@@ -28,6 +28,7 @@
                     <th>开始时间</th>
                     <th>结束时间</th>
                     <th>创建时间</th>
+                    <th>状态</th>
                     <th>操作</th>
                 </tr>
                 </thead>
@@ -44,6 +45,9 @@
                         </td>
                         <td>
                             <fmt:formatDate value="${sk.createTime}" pattern="yyyy-MM-dd HH:mm:ss" />
+                        </td>
+                        <td>
+                            ${sk.state}
                         </td>
                         <td>
                             <a class="btn btn-info" href="/seckill/${sk.seckillId}/modify" >修改</a>

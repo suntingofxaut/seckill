@@ -20,6 +20,16 @@ public class Seckill {
 
     private Date createTime;
 
+    public String getState() {
+        return state;
+    }
+
+    public void setState(String state) {
+        this.state = state;
+    }
+
+    private String state;
+
     public Date getCreateTime() {
         return createTime;
     }
