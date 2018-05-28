@@ -128,6 +128,8 @@ public class SeckillController {
     @RequestMapping(value = "/userlogin", method =  {RequestMethod.GET , RequestMethod.POST } )
     public String userlogin(@RequestBody User user ){
         System.out.println("前端传来的买家账号信息："+user.toString());
+        userPhone1=Long.valueOf(user.getName());
+        System.out.println(userPhone1);
         Integer count = userService.getCount(user);
         System.out.println("买家用户名密码匹配条数查询结果："+count.toString());
         return count.toString();
@@ -202,7 +204,6 @@ public class SeckillController {
         if(userPhone==null){
             return new SeckillResult<SeckillExecution>(false ,"未注册");
         }
-        userPhone1 = userPhone;
         try {
             SeckillExecution execution = seckillService.executeSeckil(seckillId, userPhone, md5);
             return new SeckillResult<SeckillExecution>(true, execution);
